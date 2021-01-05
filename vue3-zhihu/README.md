@@ -1,4 +1,4 @@
-# vue3-basic
+# vue3-zhihu
 
 ## Project setup
 ```
