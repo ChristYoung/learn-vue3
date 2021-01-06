@@ -1,7 +1,7 @@
 <template>
     <div class="dropdown">
-        <a href="#" class="btn btn-outline-light my-2 dropdown-toggle">{{title}}</a>
-        <ul class="dropdown-menu">
+        <a href="#" class="btn btn-outline-light my-2 dropdown-toggle" @click.prevent="toggleOpen">{{title}}</a>
+        <ul class="dropdown-menu" :style="{display: 'block'}" v-if="isOPen">
             <li class="dorpdown-item">
                 <a href="">新建文章</a>
             </li>
@@ -15,7 +15,7 @@
 
 </style>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'DropDown',
@@ -23,6 +23,13 @@ export default defineComponent({
     title: {
       type: String
     }
+  },
+  setup () {
+    const isOPen = ref(false);
+    const toggleOpen = () => {
+      isOPen.value = !isOPen.value;
+    };
+    return { isOPen, toggleOpen };
   }
 });
 
