@@ -11,7 +11,8 @@
         </ul>
         <ul v-else class="list-inline mb-0">
             <li class="list-inline-item">
-                <a href="" class="btn btn-outline-light">你好, {{user.name}}</a>
+                <!-- <a href="" class="btn btn-outline-light">你好, {{user.name}}</a> -->
+                <drop-down :title="`你好, ${user.name}`"></drop-down>
             </li>
         </ul>
     </nav>
@@ -21,10 +22,12 @@
 </style>
 <script lang="ts">
 import { computed, defineComponent, PropType } from 'vue';
+import DropDown from './DropDown.vue';
 import { UserInfo } from '@/do';
 
 export default defineComponent({
     name: 'GlobalHeader',
+    components: { DropDown }
     props: {
         user: {
             type: Object as PropType<UserInfo>,
