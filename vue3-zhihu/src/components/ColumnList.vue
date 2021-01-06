@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div v-for="column in list" :key="column.id" class="col-3">
+    <div v-for="column in columnList" :key="column.id" class="col-3">
       <div class="card h-100 shadow-sm">
         <div class="card-body text-center">
           <img :src="column.avatar" alt="" />
@@ -20,11 +20,11 @@ img {
 }
 </style>
 <script lang="ts">
-import { computed, defineComponent, PropType } from "vue";
-import { ColumnProps } from "@/do";
+import { computed, defineComponent, PropType } from 'vue';
+import { ColumnProps } from '@/do';
 
 export default defineComponent({
-  name: "ColumnList",
+  name: 'ColumnList',
   props: {
     list: {
       // vue中的PropType可以将一个构造函数返回成一个类型
@@ -36,8 +36,7 @@ export default defineComponent({
     // 设置默认图片
     const columnList = computed(() =>
       props.list.map(p => {
-        p.avatar = p?.avatar ? p?.avatar : require("@/assets/logo.png");
-        console.log("p", p);
+        p.avatar = p?.avatar ? p?.avatar : require('@/assets/logo.png');
         return p;
       })
     );
