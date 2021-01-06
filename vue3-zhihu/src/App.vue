@@ -1,16 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="container">
+    <column-list :list="list"></column-list>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import ColumnList from "./components/ColumnList.vue";
+import { ColumnProps } from "@/do";
+import "bootstrap/dist/css/bootstrap.min.css";
 
+const testData: ColumnProps[] = [
+  {
+    id: 1,
+    avatar:
+      "https://cn.bing.com/th?id=OHR.SnowCraterLake_ZH-CN9218350129_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
+    desc: "这是专栏1",
+    title: "test1的专栏"
+  },
+  {
+    id: 2,
+    avatar:
+      "https://cn.bing.com/th?id=OHR.Goessweinstein_ZH-CN2155531895_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
+    desc: "这是专栏2",
+    title: "test2的专栏"
+  }
+];
 export default defineComponent({
   name: "App",
-  components: {
-    HelloWorld
+  components: { ColumnList },
+  setup() {
+    return {
+      list: testData
+    };
   }
 });
 </script>
