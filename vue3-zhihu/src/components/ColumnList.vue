@@ -35,9 +35,11 @@ export default defineComponent({
   setup(props) {
     // 设置默认图片
     const columnList = computed(() =>
-      props.list.map(
-        p => (p.avatar = p?.avatar ? p?.avatar : require("@/assets/logo.png"))
-      )
+      props.list.map(p => {
+        p.avatar = p?.avatar ? p?.avatar : require("@/assets/logo.png");
+        console.log("p", p);
+        return p;
+      })
     );
     return { columnList };
   }

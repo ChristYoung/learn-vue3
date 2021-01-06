@@ -24,6 +24,11 @@ const testData: ColumnProps[] = [
       'https://cn.bing.com/th?id=OHR.Goessweinstein_ZH-CN2155531895_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp',
     desc: '这是专栏2',
     title: 'test2d的专栏'
+  },
+  {
+    id: 3,
+    desc: '这是专栏3',
+    title: 'test3d的专栏'
   }
 ];
 export default defineComponent({
