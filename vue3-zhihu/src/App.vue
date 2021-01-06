@@ -5,31 +5,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import ColumnList from "./components/ColumnList.vue";
-import { ColumnProps } from "@/do";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { defineComponent } from 'vue';
+import ColumnList from './components/ColumnList.vue';
+import { ColumnProps } from '@/do';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const testData: ColumnProps[] = [
   {
     id: 1,
     avatar:
-      "https://cn.bing.com/th?id=OHR.SnowCraterLake_ZH-CN9218350129_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
-    desc: "这是专栏1",
-    title: "test1的专栏"
+      'https://cn.bing.com/th?id=OHR.SnowCraterLake_ZH-CN9218350129_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp',
+    desc: '这是专栏1',
+    title: 'test1rddd的专栏'
   },
   {
     id: 2,
     avatar:
-      "https://cn.bing.com/th?id=OHR.Goessweinstein_ZH-CN2155531895_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
-    desc: "这是专栏2",
-    title: "test2的专栏"
+      'https://cn.bing.com/th?id=OHR.Goessweinstein_ZH-CN2155531895_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp',
+    desc: '这是专栏2',
+    title: 'test2d的专栏'
   }
 ];
 export default defineComponent({
-  name: "App",
+  name: 'App',
   components: { ColumnList },
-  setup() {
+  setup () {
     return {
       list: testData
     };
@@ -38,6 +38,7 @@ export default defineComponent({
 </script>
 
 <style>
+*{margin: 0; padding: 0;}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
