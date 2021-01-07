@@ -1,5 +1,5 @@
 <template>
-    <div class="dropdown">
+    <div class="dropdown" ref="dropDownRef">
         <a href="#" class="btn btn-outline-light my-2 dropdown-toggle" @click.prevent="toggleOpen">{{title}}</a>
         <ul class="dropdown-menu" :style="{display: 'block'}" v-if="isOPen">
             <slot></slot>
@@ -10,7 +10,7 @@
 
 </style>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onMounted, onUnmounted } from 'vue';
 
 export default defineComponent({
   name: 'DropDown',
@@ -24,7 +24,17 @@ export default defineComponent({
     const toggleOpen = () => {
       isOPen.value = !isOPen.value;
     };
-    return { isOPen, toggleOpen };
+    const dropDownRef = ref(null);
+    const dropDownClickHandler = (e: MouseEvent) => {
+
+    };
+    onUnmounted(() => {
+      document.addEventListener('click', dropDownClickHandler)
+    });
+    onUnmounted(() => {
+      document.removeEventListener('click');
+    });
+    return { isOPen, toggleOpen, dropDownRef };
   }
 });
 
