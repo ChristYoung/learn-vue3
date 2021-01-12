@@ -32,8 +32,6 @@ export default defineComponent({
 
     // 监听isClickOutSide的变化
     watch(isClickOutSide, () => {
-      console.log('isopen', isOPen.value);
-      console.log('isclickoutside', isClickOutSide.value);
       if (isOPen.value && isClickOutSide.value) {
         isOPen.value = false;
       }
